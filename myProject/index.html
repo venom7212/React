@@ -8,36 +8,95 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
     <div id="root"></div>
     <script type="text/babel">
 
+        const favoritFilms = [
+            {
+                id: 1,
+                title: "Бэтмен",
+                posterLink: "https://avatars.mds.yandex.net/get-kinopoisk-image/6201401/4d924203-de93-4f05-9564-94ff08678516/3840x",
+                date: 2022,
+                rating: 7.9,
+                description: "После двух лет поисков правосудия на улицах Готэма Бэтмен становится для горожан олицетворением беспощадного возмездия. Когда в городе происходит серия жестоких нападений на высокопоставленных чиновников, улики приводят Брюса Уэйна в самые тёмные закоулки преступного мира, где он встречает Женщину-Кошку, Пингвина, Кармайна Фальконе и Загадочника. Теперь под прицелом оказывается сам Бэтмен, которому предстоит отличить друга от врага и восстановить справедливость во имя Готэма."
+            },
+            {
+                id: 2,
+                title: "Джентльмены",
+                posterLink: "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b0818ad5-daeb-420b-a37a-66186d209788/3840x",
+                date: 2019,
+                rating: 8.5,
+                description: "Один ушлый американец ещё со студенческих лет приторговывал наркотиками, а теперь придумал схему нелегального обогащения с использованием поместий обедневшей английской аристократии и очень неплохо на этом разбогател. Другой пронырливый журналист приходит к Рэю, правой руке американца, и предлагает тому купить киносценарий, в котором подробно описаны преступления его босса при участии других представителей лондонского криминального мира — партнёра-еврея, китайской диаспоры, чернокожих спортсменов и даже русского олигарха."
+            },
+            {
+                id: 3,
+                title: "",
+                posterLink: "",
+                date: '0000',
+                rating: '00',
+                description: ""
+            }
+        ]
+
+        const CardFilms = ({ dataFilms }) => {
+            const { title, posterLink, date, rating, description } = dataFilms
+            let newPlates
+
+            if (dataFilms.length) {
+                newPlates = dataFilms.map(function (item) {
+                    return (
+                        <div className="oneFilm" key={item.id}>
+                            <div className="list_container" >
+                                <p className="films_title">{item.title}:</p>
+                                <img className="films_posterLink" src={item.posterLink} />
+                                <p className="films_date">Date:{item.date}</p>
+                                <p className="films_rating">Rating:{item.rating}</p>
+                            </div>
+                            <div className="desc_container">
+                                <div className="films_description">Description:{item.description}</div>
+                            </div>
+                        </div>
+                    )
+                })
+            } else {
+                newPlates = <p>Добавьте фильм</p>
+            }
+            return (
+                <div className="films">
+                    {newPlates}
+                </div>
+            )
+        }
+
+       
+
         const NavBar = () => {
             return (
                 <React.Fragment>
                     <ul>
-                        <li><a href="#films">Фильмы</a></li>
-                        <li><a href="#serials">Сериалы</a></li>
-                        <li><a href="#another">Прочее</a></li>                        
+                        <li><a href="">Фильмы</a></li>
+                        <li><a href="">Сериалы</a></li>
+                        <li><a href="">Прочее</a></li>
                     </ul>
                 </React.Fragment>
             )
         }
 
-
         const App = () => {
             return (
                 <React.Fragment>
                     <h3>My app</h3>
+                    <CardFilms dataFilms={favoritFilms} />
                     <NavBar />
-                    
                 </React.Fragment>
             )
         }
-
-
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(
