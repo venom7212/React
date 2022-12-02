@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>My project v1.0</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        const NavBar = () => {
+            return (
+                <React.Fragment>
+                    <ul>
+                        <li><a href="#films">Фильмы</a></li>
+                        <li><a href="#serials">Сериалы</a></li>
+                        <li><a href="#another">Прочее</a></li>                        
+                    </ul>
+                </React.Fragment>
+            )
+        }
+
+
+        const App = () => {
+            return (
+                <React.Fragment>
+                    <h3>My app</h3>
+                    <NavBar />
+                    
+                </React.Fragment>
+            )
+        }
+
+
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(
+            <React.StrictMode>
+                <App />
+            </React.StrictMode>
+        );
+
+    </script>
+
+</body>
+
+</html>
