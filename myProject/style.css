@@ -26,3 +26,11 @@
         
     }
 
+    .review_contetn{
+        display: flex;
+        flex-direction: row-reverse;       
+    }
+
+    #buttone_rating{
+        border-radius: 50%;
+    }
