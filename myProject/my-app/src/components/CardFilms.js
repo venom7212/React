@@ -1,12 +1,13 @@
+import React from 'react'
+import RatingFilms from './RatingFilms'
+import './CardFilms.css';
+
 const CardFilms = ({ dataFilms }) => {
     const { title, posterLink, date, rating, description } = dataFilms
     let newPlates
-
     if (dataFilms.length) {
         newPlates = dataFilms.map(function (item) {
-
             return (
-
                 <div className="oneFilm" key={item.id}>
                     <div className="list_container" >
                         <p className="films_title">{item.title}:</p>
@@ -16,6 +17,12 @@ const CardFilms = ({ dataFilms }) => {
                     </div>
                     <div className="desc_container">
                         <div className="films_description">Description:{item.description}</div>
+
+                        <div className="review_contetn">
+                            <button className="films_feedback_click">review</button>
+                            {/* <div className="films_reviews">films_review:{item.review}</div>  */}
+                            <RatingFilms  />
+                        </div>
                     </div>
                 </div>
             )

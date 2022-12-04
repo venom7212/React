@@ -1,0 +1,29 @@
+.oneFilm {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    border: 1px solid white;
+}
+.list_container {
+    border: 1px solid white;
+
+    width: 200px;
+}
+.films.title{
+    text-align: center;
+}
+
+.films_posterLink {
+    
+    width: 50px;
+}
+.desc_container {
+    width: 100%;
+    
+}
+
+.review_contetn{
+    display: flex;
+    flex-direction: row-reverse;       
+}
+
