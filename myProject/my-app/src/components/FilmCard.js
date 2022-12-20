@@ -17,7 +17,7 @@ const FilmCard = ({ dataFilms }) => {
                         <p className="films_rating">Rating:{item.rating}</p> */}
                     </div>
                     <div className="desc_container">
-                    <div>FilmCard компонент</div>
+                    <div>я FilmCard компонент</div>
                         <p className="films_title">{item.title}:</p>
                         <div className="films_description">{item.description}</div>
 
