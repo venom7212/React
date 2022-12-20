@@ -1,0 +1,45 @@
+
+.oneFilm {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid white;
+    margin-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.list_container {
+    
+    height: 200px;
+    border: 1px solid white;
+    margin: 15px;
+    
+}
+.films.title{
+    text-align: center;
+}
+
+.films_posterLink {
+    object-fit:cover;
+    height: 100%;
+    width: 200px;
+}
+.desc_container {
+    margin: 15px;
+    width: 100%;
+    
+}
+
+.review_contetn{
+    display: flex;
+    flex-direction: row-reverse;       
+}
+
+.films {
+    
+    margin: 15px;
+    
+}
+

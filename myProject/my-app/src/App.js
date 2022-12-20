@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import React from 'react';
 import './App.css';
-import CardFilms from './components/CardFilms';
-import AddFilms from './components/AddFilms';
+import FilmCard from './components/FilmCard';
+// import AddFilms from './components/AddFilms';
 
 
 const favoritFilms = [
@@ -44,9 +44,10 @@ const favoritFilms = [
 const App = () => {
   return (
       <React.Fragment>
-          <h3>My app</h3>
-          <CardFilms dataFilms={favoritFilms} />
-          <AddFilms />
+          <h3>App page</h3>
+          <FilmCard dataFilms={favoritFilms}/>
+          {/* <CardFilms dataFilms={favoritFilms} /> */}
+          {/* <AddFilms />   */}
           {/* <NavBar /> */}
       </React.Fragment>
   )
