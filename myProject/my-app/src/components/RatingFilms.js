@@ -22,7 +22,6 @@ const RatingFilms = () => {
 
     return (
         <div className="rating_buttons">
-            <div className="films_my_rating">Оцените фильм:</div>
             <div id='stars'>
                 {/* <getStars /> */}
                 <div id='silverStars'>{Array.from({ length: 5 }, getSilverStars)}</div>
