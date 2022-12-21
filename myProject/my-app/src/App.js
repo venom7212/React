@@ -1,7 +1,9 @@
-import logo from './logo.svg';
+import logo from './resources/logo.svg';
+
 import React from 'react';
 import './App.css';
 import FilmCard from './components/FilmCard';
+
 // import AddFilms from './components/AddFilms';
 
 

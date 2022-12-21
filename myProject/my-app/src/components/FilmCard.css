@@ -1,19 +1,25 @@
 
 .oneFilm {
     display: flex;
-    flex-direction: row;
-    width: 70%;
-    border-radius: 10px;
-    border: 1px solid white;
-    margin-bottom: 20px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    /* flex-direction: row; */
+    
+    margin-top: 20px;
+
     font-family: Arial, Helvetica, sans-serif;
 
 }
+
+.oneFilmBig {
+    flex-direction: column; 
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
 .list_container {
     
     height: 200px;
-    border: 1px solid white;
+    border: 1px solid rgb(0, 0, 0);
     margin: 15px;
     
 }
@@ -32,10 +38,7 @@
     
 }
 
-.review_contetn{
-    display: flex;
-    flex-direction: row-reverse;       
-}
+
 
 .films {
     
