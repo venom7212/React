@@ -24,6 +24,7 @@ const RatingFilms = () => {
         <div className="rating_buttons">
             <div id='stars'>
                 {/* <getStars /> */}
+                {/* <getStars /> */}
                 <div id='silverStars'>{Array.from({ length: 5 }, getSilverStars)}</div>
                 <div id='goldenStars'>{Array.from({ length: myRate }, getGoldStars)}</div>
             </div>
