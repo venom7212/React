@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Stars.css';
 import Star from '../resources/starGray'
 
 
 const Stars = ({setStarStateOnDonStars}) => {
-    // state = {
-    //     myRate: 0
-    // }
     const [myRate, setMyRate] = useState(0)
-    const t = myRate
- 
+    
+    useEffect(()=>{
+        setStarStateOnDonStars(myRate);
+    }, [myRate])
    
     const getSilverStars = (_, index) => {
         // getGoldStars(myRate);
@@ -29,7 +28,7 @@ const Stars = ({setStarStateOnDonStars}) => {
             <div id='stars'>
                 {/* <getStars /> */}
                 <div id='silverStars'>{Array.from({ length: 5 }, getSilverStars)}</div>
-                <div id='goldenStars'>{Array.from({ length: myRate }, getGoldStars,setStarStateOnDonStars(t))}</div>
+                <div id='goldenStars'>{Array.from({ length: myRate }, getGoldStars)}</div>
             </div>
         // </div>
     )

@@ -65,7 +65,7 @@ const FilmCard = ({ dataFilms }) => {
                      
                     </div>
                    
-                    <ReviewsPeoples props2 = {stateAllReviews} testF = {test1Function} countReviws={countReviws}/> 
+                    <ReviewsPeoples props2 = {stateAllReviews} countReviws={countReviws}/> 
 
 
                 </div>
