@@ -5,13 +5,11 @@ import ReviewForm from './ReviewForm'
 import Stars from './Stars'
 
 
-const ReviewsPeoples = ({ props2, countReviws }) => {
-    const [stateReviwPeoples, setStateReviewsfilms] = useState(props2)
+const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => {
 
     const pushNewReviews = (a, b, c, d) => {
-        // console.log(stateReviwPeoples)
-        setStateReviewsfilms([
-            ...stateReviwPeoples,
+        reviewsSet([
+            ...reviews,
             {
                 name_all_reviews: a,
                 otziv_all_reviews: b,
@@ -19,20 +17,12 @@ const ReviewsPeoples = ({ props2, countReviws }) => {
                 rate_all_reviws: d,
             }
         ])
-    }
-    const i = stateReviwPeoples.length
-
-
-    const [myRate2, setMyRate2] = useState(3)
-
-    const getSilverStars = (_, index) => {
-        // getGoldStars(myRate);
-        return <svg onClick={() => setMyRate2(index + 1)} key={index} className='star_IMG'>{Star}</svg> //worked code
+        setAverage_rate ([
+            ...summReviews,
+                    d
+        ])
     }
 
-    const getGoldStars = (_, index) => {
-        return <svg onClick={() => setMyRate2(index + 1)} key={index} className='gold_star_IMG'>{Star}</svg> //worked code
-    }
 
 
     const [visible, setVisible] = useState(false)
@@ -52,27 +42,19 @@ const ReviewsPeoples = ({ props2, countReviws }) => {
         )
     }
 
-
-
     let newPlates2
-    if (stateReviwPeoples.length > 0) {
-        newPlates2 = stateReviwPeoples.map(function (item, index) {
-            let gg = stateReviwPeoples.length
-            // console.log(gg)
-
-            // {countReviws(i)}
-
+    if (reviews.length > 0) {
+        newPlates2 = reviews.map(function (item, index) {
+            let gg = reviews.length
+           
             return (
                 <div className='all_reviews' key={`${index}_${item.name_all_reviews}`} >
                     <div className='header_all_reviews'>
-                        <div key={stateReviwPeoples.name_all_reviews} className='name_all_reviews'>{item.name_all_reviews}</div>
-                        <div key={stateReviwPeoples.data_all_reviews} className='data_all_reviews'>{item.data_all_reviews}</div>
+                        <div key={reviews.name_all_reviews} className='name_all_reviews'>{item.name_all_reviews}</div>
+                        <div key={reviews.data_all_reviews} className='data_all_reviews'>{item.data_all_reviews}</div>
                         <div className='zvezdi_all_reviews'>
                             {/* <Stars /> */}
-                            <div id='stars'>
-                                <div id='silverStars'>{Array.from({ length: 5 }, getSilverStars)}</div>
-                                <div id='goldenStars'>{Array.from({ length: item.rate_all_reviws }, getGoldStars)}</div>
-                            </div>
+                            <Stars starsCount={item.rate_all_reviws} />
                         </div>
                     </div>
                     {/* <button onClick={()=>addReviews()}>click</button> */}
@@ -81,8 +63,7 @@ const ReviewsPeoples = ({ props2, countReviws }) => {
                 </div>
             )
         })
-        // console.log(newPlates2)
-        // console.log(onlyReviws[0].reviews)
+       
     } else {
         newPlates2 = <div className='empty_reviews'>Отзывов еще нет, будь первым</div>
 

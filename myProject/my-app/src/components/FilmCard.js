@@ -1,88 +1,55 @@
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import './FilmCard.css';
 import Star from '../resources/starGray'
 import ReviewsPeoples from './ReviewsPeoples'
+import Stars from './Stars'
+
+
+const FilmCard = ({ filmData }) => {
+    const { posterLink, title, description } = filmData;
+
+    const [reviews, setReviews] = useState(filmData.reviews);
+
+
+    const [summReviews, setAverage_rate] = useState([])
+
+    
+    const calculatedReviews = summReviews.reduce(function(a, b) {
+        return Math.round(a + b);
+    },0)
+    const calculatedReviewsDelenie = calculatedReviews/summReviews.length  
+    
+    
+
+    // const summRev = (summReviews) => summReviews.reduce((acc, num) => acc + num, 0);
+    // const delenieRev = (summRev,summReviews) => Math.round(summRev / summReviews.length)
 
  
 
-const FilmCard = ({ dataFilms }) => {
-    const [stateAllfimls,setStateallfilms] = useState(dataFilms)
-    // const  [stateAllReviews, setStateallreviews] = useState(dataFilms.reviews)
 
-    // const [stateAllReviews, setStateallreviews] = useState(allReviews)
-  
-    const test1Function = (test3) =>{ //не используется
-        // console.log(test1 ,'+', test2, '+' ,test3, '+',test4)
-        setStateallfilms([
-            ...stateAllfimls,
-            test3
-        ])
-    }
-
-    const [stateCountReviws, setStateCountReviws] = useState(0)
-    const countReviws = (n) =>{ //не используется
-        setStateCountReviws(
-        n 
-        )
-    }
-
-    let newPlates
-
-    if (stateAllfimls.length) {
-        newPlates = stateAllfimls.map(function (item) {
-            
-            let stateAllReviews = item.reviews
-          
-            // console.log(stateAllReviews)
-            return (
-                <div key={stateAllfimls.id} className='oneFilmBig'>
-                    <div className="oneFilm" >
-                        <div className="list_container" >
-                            <img className="films_posterLink" src={item.posterLink} />
-                            {/* <p className="films_date">Date:{item.date}</p>
-                        <p className="films_rating">Rating:{item.rating}</p> */}
-                        </div>
-                        <div className="desc_container">
-                            <p className="films_title">{item.title}:</p>
-                            <div className='rate_review'>
-                                <div className='average_rate'>
-                                    <svg className='star_IMG'>{Star}</svg>
-                                    <svg className='star_IMG'>{Star}</svg>
-                                    <svg className='star_IMG'>{Star}</svg>
-                                    <svg className='star_IMG'>{Star}</svg>
-                                    <svg className='star_IMG'>{Star}</svg>
-                                </div>
-                                <div className='summa_review'>  Отзывы({item.countReviews})</div>
-                                {/* <div className='summa_review' onClick={()=>{uberState()}}> teset</div> */}
-                            </div>
-
-                        
-                        
-                            <div className="films_description">{item.description}</div>
-
-                        </div>
-
-                     
-                    </div>
-                   
-                    <ReviewsPeoples props2 = {stateAllReviews} countReviws={countReviws}/> 
-
-
-                </div>
-
-            )
-        })
-    } else {
-        newPlates = <p>Нет фильмов</p>
-    }
     return (
-        <div key={stateAllfimls.id} className="films">
-            {newPlates}
+        <div key={`${title}_${description.substring(0, 2)}`} className='oneFilmBig'>
+            <div className="oneFilm" >
+                <div className="list_container" >
+                    <img className="films_posterLink" src={posterLink} />
+                    {/* <p className="films_date">Date:{item.date}</p>
+                        <p className="films_rating">Rating:{item.rating}</p> */}
+                </div>
+                <div className="desc_container">
+                    <p className="films_title">{title}:</p>
+                    <div className='rate_review'>
+                        <div className='average_rate'>
+                            <Stars starsCount={calculatedReviewsDelenie} />
+                        </div>
+                        <div className='summa_review'>  Отзывы({reviews.length})</div>
+                        {/* <div className='summa_review' onClick={()=>{uberState()}}> teset</div> */}
+                    </div>
+                    <div className="films_description">{description}</div>
+                </div>
+            </div>
+            <ReviewsPeoples reviews={reviews} summReviews={summReviews} setAverage_rate={setAverage_rate} reviewsSet={setReviews} />
         </div>
-
-
     )
 }
 
 export default FilmCard;
-

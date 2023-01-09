@@ -20,6 +20,9 @@ const favoritFilms = [
     reviews: [
 
     ],
+    summReviews: [
+
+    ],
     myRating: '',
     description: "После двух лет поисков правосудия на улицах Готэма Бэтмен становится для горожан олицетворением беспощадного возмездия. Когда в городе происходит серия жестоких нападений на высокопоставленных чиновников, улики приводят Брюса Уэйна в самые тёмные закоулки преступного мира, где он встречает Женщину-Кошку, Пингвина, Кармайна Фальконе и Загадочника. Теперь под прицелом оказывается сам Бэтмен, которому предстоит отличить друга от врага и восстановить справедливость во имя Готэма."
   },
@@ -31,6 +34,9 @@ const favoritFilms = [
     rating: 8.5,
     countReviews: "0",
     reviews: [
+
+    ],
+    summReviews: [
 
     ],
     my_rating: '',
@@ -46,19 +52,26 @@ const favoritFilms = [
     reviews: [
 
     ],
+    summReviews: [
+
+    ],
     my_rating: '',
-    description: ""
+    description: "test"
   }
 ]
 
-
-
+const getFilmCards = () => {
+  return favoritFilms.map(item => {
+    return <FilmCard filmData={item} />
+  });
+}
 
 const App = () => {
   return (
     <React.Fragment>
-      <FilmCard dataFilms={favoritFilms} />
-
+      <div className="films">
+        {favoritFilms.length ? getFilmCards() : <p>Нет фильмов</p>}
+      </div>
     </React.Fragment>
   )
 }

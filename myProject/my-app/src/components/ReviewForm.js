@@ -7,7 +7,7 @@ import './ReviewForm.css';
 const ReviewForm = ({ pushNewReviews }) => {
     const [a, setStateA] = useState('');
     const [b, setStateB] = useState('');
-    const [d, setStateD] = useState('');
+    const [d, setStateD] = useState(0);
 
     // const [stateReviwPeoples,setStateallfilms] = useState(props3)
     const date = new Date();
@@ -43,6 +43,8 @@ const ReviewForm = ({ pushNewReviews }) => {
         resetStateInputs()
     }
 
+    
+
     return (
 
         <div className='ReviewForm'>
@@ -56,7 +58,7 @@ const ReviewForm = ({ pushNewReviews }) => {
                     onChange={event_handlerA}
                 ></input>
 
-                <Stars setStarStateOnDonStars={setStateD} />
+                <Stars setStars={setStateD} starsCount={d} />
 
             </div>
             <input
