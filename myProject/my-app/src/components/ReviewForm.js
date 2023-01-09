@@ -39,8 +39,13 @@ const ReviewForm = ({ pushNewReviews }) => {
     }
 
     const onClick = () => {
-        pushNewReviews(a, b, c, d);
-        resetStateInputs()
+        if (a && b && d !== ''){
+            pushNewReviews(a, b, c, d);
+            resetStateInputs()
+        }else{
+            alert('заполните основные поля')
+        }
+        
     }
 
     
