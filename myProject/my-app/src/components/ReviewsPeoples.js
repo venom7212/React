@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Star from '../resources/starGray'
 import './ReviewsPeoples.css';
 import ReviewForm from './ReviewForm'
 import Stars from './Stars'
@@ -7,19 +6,19 @@ import Stars from './Stars'
 
 const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => {
 
-    const pushNewReviews = (a, b, c, d) => {
+    const pushNewReviews = (name, review, date, rate) => {
         reviewsSet([
             ...reviews,
             {
-                name_all_reviews: a,
-                otziv_all_reviews: b,
-                data_all_reviews: c,
-                rate_all_reviws: d,
+                name,
+                review,
+                date,
+                rate,
             }
         ])
         setAverage_rate ([
             ...summReviews,
-                    d
+                    rate
         ])
     }
 
@@ -28,7 +27,7 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
     const [visible, setVisible] = useState(false)
 
     const visibleLogics = () => {
-        if ({ visible } == false) {
+        if ( visible  == false) {
             setVisible(
                 true
             )
@@ -45,20 +44,19 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
     let newPlates2
     if (reviews.length > 0) {
         newPlates2 = reviews.map(function (item, index) {
-            let gg = reviews.length
            
             return (
-                <div className='all_reviews' key={`${index}_${item.name_all_reviews}`} >
+                <div className='all_reviews' key={`${index}_${item.name}`} >
                     <div className='header_all_reviews'>
-                        <div key={reviews.name_all_reviews} className='name_all_reviews'>{item.name_all_reviews}</div>
-                        <div key={reviews.data_all_reviews} className='data_all_reviews'>{item.data_all_reviews}</div>
+                        <div key={reviews.name} className='name_all_reviews'>{item.name}</div>
+                        <div key={reviews.date} className='data_all_reviews'>{item.date}</div>
                         <div className='zvezdi_all_reviews'>
                             {/* <Stars /> */}
-                            <Stars starsCount={item.rate_all_reviws} />
+                            <Stars starsCount={item.rate} />
                         </div>
                     </div>
                     {/* <button onClick={()=>addReviews()}>click</button> */}
-                    <div className='otziv_all_reviews'>{item.otziv_all_reviews}</div>
+                    <div className='otziv_all_reviews'>{item.review}</div>
 
                 </div>
             )

@@ -1,6 +1,5 @@
-import logo from './resources/logo.svg';
 
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import FilmCard from './components/FilmCard';
 
@@ -61,8 +60,8 @@ const favoritFilms = [
 ]
 
 const getFilmCards = () => {
-  return favoritFilms.map(item => {
-    return <FilmCard filmData={item} />
+  return favoritFilms.map((item,index) => {
+    return <FilmCard filmData={item} key={index} />
   });
 }
 

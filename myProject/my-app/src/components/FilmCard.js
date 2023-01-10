@@ -1,6 +1,5 @@
-import React, { useId, useState } from 'react';
+import React, {  useState } from 'react';
 import './FilmCard.css';
-import Star from '../resources/starGray'
 import ReviewsPeoples from './ReviewsPeoples'
 import Stars from './Stars'
 

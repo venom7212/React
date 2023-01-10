@@ -5,50 +5,36 @@ import './ReviewForm.css';
 
 
 const ReviewForm = ({ pushNewReviews }) => {
-    const [a, setStateA] = useState('');
-    const [b, setStateB] = useState('');
-    const [d, setStateD] = useState(0);
+    const [name, setName] = useState('');
+    const [review, setReview] = useState('');
+    const [rate, setRate] = useState(0);
 
-    // const [stateReviwPeoples,setStateallfilms] = useState(props3)
-    const date = new Date();
-
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    const hrs = date.getHours();
-    const minutes = date.getMinutes();
-    // const seconds = date.getSeconds();
-
-    
-
-    const c = `${day < 10 ? 0 : ''}${day}.${month < 10 ? 0 : ''}${month}.${year} ${hrs}:${minutes}`;
-
-    const event_handlerA = (e) => {
+    const inputHandler = (e,setter) => {
         const value = e.currentTarget.value
-        setStateA(value)
-    }
-
-    const event_handlerB = (e) => {
-        const value = e.currentTarget.value
-        setStateB(value)
+        setter(value)
     }
 
     const resetStateInputs = () => {
-        setStateA('');
-        setStateB('');
+        setName('');
+        setReview('');
+        setRate(0);
     }
 
     const onClick = () => {
-        if (a && b && d !== ''){
-            pushNewReviews(a, b, c, d);
+        if (name && review && rate !== 0) {
+            const date = new Date();
+            const day = date.getDate();
+            const month = date.getMonth() + 1;
+            const year = date.getFullYear();
+            const hrs = date.getHours();
+            const minutes = date.getMinutes();
+            const preparedDate = `${day < 10 ? 0 : ''}${day}.${month < 10 ? 0 : ''}${month}.${year} ${hrs}:${minutes}`;
+            pushNewReviews(name, review, preparedDate, rate);
             resetStateInputs()
-        }else{
-            alert('заполните основные поля')
+        } else {
+            alert('Заполните основные поля')
         }
-        
     }
-
-    
 
     return (
 
@@ -59,19 +45,20 @@ const ReviewForm = ({ pushNewReviews }) => {
                     type='text'
                     className='name_Review'
                     placeholder='Ваше имя'
-                    value={a}
-                    onChange={event_handlerA}
+                    value={name}
+                    onChange={(e)=>(inputHandler(e,setName))}
                 ></input>
 
-                <Stars setStars={setStateD} starsCount={d} />
+                <Stars setStars={setRate} starsCount={rate} />
 
             </div>
             <input
                 id='textReview'
                 className='text_Review'
                 placeholder='Отзыв о фильме'
-                value={b}
-                onChange={event_handlerB}
+                value={review}
+                onChange={(e)=>(inputHandler(e,setReview))}
+
             ></input>
             <button className='add__btn' onClick={onClick}> Оставить отзыв </button>
         </div>
