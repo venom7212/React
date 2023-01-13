@@ -1,3 +1,9 @@
+.rate_review{
+    display: flex;
+}
+
+
+
 
 .oneFilm {
     display: flex;
@@ -37,12 +43,3 @@
     width: 100%;
     
 }
-
-
-
-.films {
-    
-    margin: 15px;
-    
-}
-

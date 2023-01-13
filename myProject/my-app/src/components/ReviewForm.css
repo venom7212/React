@@ -1,14 +1,18 @@
 .ReviewForm {
     border: 1px solid black;
-    margin: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     border-radius: 10px;
     
 }
 
 .name_Review{
     border-radius: 5px;
-    margin-top: 15px;
-    margin-left: 15px;
+    height: 20px;
+    /* margin-top: 15px; */
+    /* margin-left: 15px; */
 }
 
 .text_Review{
@@ -20,7 +24,13 @@
 }
 
 .add__btn{
-    
+    display: block;
     border-radius: 5px;
     margin: 15px;
+    margin-left: auto;
+}
+
+#headerReviewForm{
+    margin: 15px;
+    display: flex;
 }

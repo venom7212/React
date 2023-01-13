@@ -1,24 +1,25 @@
-
-
 #buttone_rating{
     border-radius: 50%;
 }
 
 
 #stars{
-    height: 45px;
+    position: relative;
+    margin-left:auto;
+    height: 30px;
+    width: 150px;
     /* border: 1px solid black;  */
 }
 
 #silverStars{
-    /* border: 1px solid black;  */
+    /* border: 1px soli d black;  */
     position: absolute;
     
 }
 
 #goldenStars{
     /* border: 1px solid black;  */
-    position: relative;
+    position: absolute;
 
 }
 
@@ -27,10 +28,10 @@
     
 }
 
-.rating_buttons {
+/* .rating_buttons {
     display:flex;
     margin-left: 15px;
-}
+} */
 
 
 
@@ -38,7 +39,7 @@
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
-    /* fill:rgb(200, 38, 38); */
+    fill:rgb(5, 2, 2);
     /* filter:  sepia(1); */
 
 }
@@ -46,10 +47,8 @@
     width: 30px;
     height: 30px;
     margin-bottom: 10px;
-    /* fill:rgb(200, 38, 38); */
-    filter:sepia(1);
-    
-
+    fill:rgb(255, 217, 3);
+    /* filter:sepia(1); */
 }
 
 /* 

@@ -1,0 +1,55 @@
+
+.header_all_reviews{
+    display: flex;
+    /* border: 1px solid rgb(0, 0, 0); */
+    height: 25px;
+}
+
+
+.all_reviews{
+    border-radius: 10px;
+
+    border: 1px solid rgb(0, 0, 0);
+    margin: 20px;
+}
+.name_all_reviews{
+    margin-left: 10px;
+
+    /* border: 1px solid rgb(0, 0, 0); */
+}
+.data_all_reviews{
+    margin-left: 10px;
+    /* border: 1px solid rgb(0, 0, 0); */
+}
+.zvezdi_all_reviews{
+    /* border: 1px solid rgb(0, 0, 0); */
+    margin-left:auto;
+
+}
+.otziv_all_reviews{
+    margin-left: 10px;
+
+    /* border: 1px solid rgb(0, 0, 0); */
+}
+
+.empty_reviews{
+    border-radius: 10px;
+    text-align:center;
+    border: 1px solid rgb(0, 0, 0);
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    padding: 5px;
+}
+
+.button_visible{
+    /* display: block; */
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    width: 95%;
+    /* margin-left: auto; */
+}
