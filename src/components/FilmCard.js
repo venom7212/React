@@ -1,5 +1,5 @@
 import React, {  useState } from 'react';
-import './FilmCard.css';
+import './Main.css';
 import ReviewsPeoples from './ReviewsPeoples'
 import Stars from './Stars'
 

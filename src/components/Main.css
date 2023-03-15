@@ -1,0 +1,439 @@
+@media (min-width: 1241px) {
+    #root {
+        display: flex;
+    }
+    .films_description{
+        margin-top: 10px;
+    }
+
+    .films {
+        width: 100%;
+        margin: 15px;
+
+    }
+
+    .rate_review {
+        display: flex;
+    }
+
+    .oneFilm {
+        display: flex;
+        margin-top: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .oneFilmBig {
+        flex-direction: column;
+        border-radius: 10px;
+        border: 1px solid rgb(0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .list_container {
+        height: 200px;
+        border: 1px solid rgb(0, 0, 0);
+        margin: 15px;
+    }
+
+    .films.title {
+        text-align: center;
+    }
+
+    .films_posterLink {
+        object-fit: cover;
+        height: 100%;
+        width: 200px;
+    }
+
+    .desc_container {
+        margin: 15px;
+        width: 100%;
+        font-size: 24px;
+
+    }
+
+    .ReviewForm {
+        border: 1px solid black;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .name_Review {
+        border-radius: 5px;
+        height: 20px;
+    }
+
+    .pushNewReviews {
+        width: 100%;
+        /* margin-left: 5px;
+        margin-right: 5px; */
+    }
+
+    .text_Review {
+        border-radius: 5px;
+        margin-right: 15px;
+        margin-left: 15px;
+        width: 100%;
+        min-height: 50px;
+    }
+
+    .textReviewDiv {
+        margin-right: 38px;
+
+    }
+
+    .add__btn {
+        display: block;
+        border-radius: 5px;
+        margin: 15px;
+        margin-left: auto;
+    }
+
+    #headerReviewForm {
+        margin: 15px;
+        display: flex;
+    }
+
+
+    .header_all_reviews {
+        display: flex;
+        height: 25px;
+    }
+
+
+    .all_reviews {
+        border-radius: 10px;
+        border: 1px solid rgb(0, 0, 0);
+        margin: 20px;
+    }
+
+    .name_all_reviews {
+        margin-left: 10px;
+    }
+
+    .data_all_reviews {
+        margin-left: 10px;
+    }
+
+    .zvezdi_all_reviews {
+        margin-left: auto;
+    }
+
+    .otziv_all_reviews {
+        margin-left: 10px;
+    }
+
+    .empty_reviews {
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgb(0, 0, 0);
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+
+    .button_visible {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .button_visible_div {
+        padding: 20px;
+
+    }
+    #buttone_rating {
+        border-radius: 50%;
+    }
+
+    #stars {
+        position: relative;
+        margin-left: auto;
+        height: 30px;
+        width: 150px;
+    }
+
+    #silverStars {
+        position: absolute;
+    }
+
+    #goldenStars {
+        position: absolute;
+    }
+
+    .spanRating {
+        width: 3%;
+    }
+
+    /* .rating_buttons {
+    display:flex;
+    margin-left: 15px;
+} */
+
+
+
+    .star_IMG {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        fill: rgb(5, 2, 2);
+        /* filter:  sepia(1); */
+
+    }
+
+    .gold_star_IMG {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        fill: rgb(255, 217, 3);
+        /* filter:sepia(1); */
+    }
+
+    /* 
+<filter id="myFilter">
+  <feColorMatrix in="SourceGraphic"
+    type="matrix"
+    values="2 1 0 0 0
+            1 1 0 0 0
+            1 1 0 0 0
+            0 0 0 1 0" />
+</filter> */
+    /* 255 171 74 */
+    /* 100% красного, 67.06% зеленого и 29.02% синего */
+    /* #ffab4a; */
+}
+
+
+@media (max-width: 1240px) {
+    #root {
+        display: flex;
+    }
+
+    .films {
+
+        margin: 15px;
+
+    }
+
+    .rate_review {
+        display: flex;
+    }
+
+    .oneFilm {
+        display: flex;
+        margin-top: 5px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .oneFilmBig {
+        flex-direction: column;
+        border-radius: 10px;
+        border: 1px solid rgb(0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
+
+    .list_container {
+        height: 100px;
+        border: 1px solid rgb(0, 0, 0);
+        margin: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .films.title {
+        text-align: center;
+    }
+
+    .films_posterLink {
+        object-fit: cover;
+        height: 100%;
+        width: 100px;
+    }
+
+    .desc_container {
+        margin: 5px;
+        width: 100%;
+        font-size: 11px;
+
+    }
+
+    .ReviewForm {
+        border: 1px solid black;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 5px;
+        border-radius: 10px;
+    }
+
+    .name_Review {
+        border-radius: 5px;
+        height: 20px;
+    }
+
+    .pushNewReviews {
+        /* width: 100%; */
+        /* margin-left: 5px;
+        margin-right: 5px; */
+    }
+
+    .text_Review {
+        border-radius: 5px;
+        min-width: 100%;
+        min-height: 25px;
+        box-sizing: border-box;
+    }
+
+    .textReviewDiv {
+        /* width: 100%;*/
+        padding: 5px; 
+        
+
+
+
+    }
+
+    .add__btn {
+        display: block;
+        border-radius: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: auto;
+    }
+
+    #headerReviewForm {
+        margin: 5px;
+        display: flex;
+    }
+
+
+    .header_all_reviews {
+        display: flex;
+        height: 25px;
+    }
+
+
+    .all_reviews {
+        border-radius: 10px;
+        border: 1px solid rgb(0, 0, 0);
+        margin: 10px;
+        font-size: 12px;
+
+
+    }
+
+    .name_all_reviews {
+        margin-left: 10px;
+    }
+
+    .data_all_reviews {
+        margin-left: 10px;
+    }
+
+    .zvezdi_all_reviews {
+        margin-left: auto;
+
+    }
+
+    .otziv_all_reviews {
+        margin-left: 10px;
+    }
+
+    .empty_reviews {
+        border-radius: 10px;
+        text-align: center;
+        border: 1px solid rgb(0, 0, 0);
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .button_visible {
+        /* border-radius: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        width: 95%; */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .button_visible_div {
+        padding: 10px;
+
+    }
+
+    #buttone_rating {
+        border-radius: 50%;
+    }
+
+    #stars {
+        position: relative;
+        margin-left: auto;
+        height: 30px;
+        width: 150px;
+        transform: scale(0.7);
+        margin-top: -4px;
+
+
+    }
+    .films_title{
+        margin-top: 0px;
+        margin-bottom: 2px;
+
+
+    }
+    #silverStars {
+        position: absolute;
+    }
+
+    #goldenStars {
+        position: absolute;
+    }
+
+    .spanRating {
+        width: 3%;
+    }
+
+    /* .rating_buttons {
+    display:flex;
+    margin-left: 15px;
+} */
+
+
+
+    .star_IMG {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        fill: rgb(5, 2, 2);
+        /* filter:  sepia(1); */
+
+    }
+
+    .gold_star_IMG {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 10px;
+        fill: rgb(255, 217, 3);
+        /* filter:sepia(1); */
+    }
+
+    /* 
+<filter id="myFilter">
+  <feColorMatrix in="SourceGraphic"
+    type="matrix"
+    values="2 1 0 0 0
+            1 1 0 0 0
+            1 1 0 0 0
+            0 0 0 1 0" />
+</filter> */
+    /* 255 171 74 */
+    /* 100% красного, 67.06% зеленого и 29.02% синего */
+    /* #ffab4a; */
+}

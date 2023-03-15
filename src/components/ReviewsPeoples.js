@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import './ReviewsPeoples.css';
+import './Main.css';
 import ReviewForm from './ReviewForm'
 import Stars from './Stars'
 
 
-const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => {
+const ReviewsPeoples = ({ reviews, reviewsSet, setAverage_rate, summReviews }) => {
 
     const pushNewReviews = (name, review, date, rate) => {
         reviewsSet([
@@ -16,9 +16,9 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
                 rate,
             }
         ])
-        setAverage_rate ([
+        setAverage_rate([
             ...summReviews,
-                    rate
+            rate
         ])
     }
 
@@ -27,7 +27,7 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
     const [visible, setVisible] = useState(false)
 
     const visibleLogics = () => {
-        if ( visible  == false) {
+        if (visible == false) {
             setVisible(
                 true
             )
@@ -44,12 +44,12 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
     let newPlates2
     if (reviews.length > 0) {
         newPlates2 = reviews.map(function (item, index) {
-           
+
             return (
                 <div className='all_reviews' key={`${index}_${item.name}`} >
                     <div className='header_all_reviews'>
-                        <div key={reviews.name} className='name_all_reviews'>{item.name}</div>
-                        <div key={reviews.date} className='data_all_reviews'>{item.date}</div>
+                        <div key={reviews.name} className='name_all_reviews'>Имя: {item.name}</div>
+                        <div key={reviews.date} className='data_all_reviews'>Дата отзыва: {item.date}</div>
                         <div className='zvezdi_all_reviews'>
                             {/* <Stars /> */}
                             <Stars starsCount={item.rate} />
@@ -61,7 +61,7 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
                 </div>
             )
         })
-       
+
     } else {
         newPlates2 = <div className='empty_reviews'>Отзывов еще нет, будь первым</div>
 
@@ -74,8 +74,9 @@ const ReviewsPeoples = ({ reviews, reviewsSet ,setAverage_rate,summReviews}) => 
                 {newPlates2}
 
             </div> : null}
-            <button onClick={visibleLogics} className='button_visible'>{visible ? "Скрыть отзывы ▲" : "Показать отзывы ▼"}</button>
-
+            <div className='button_visible_div'>
+                <button onClick={visibleLogics} className='button_visible'>{visible ? "Скрыть отзывы ▲" : "Показать отзывы ▼"}</button>
+            </div>
         </div>
     )
 }

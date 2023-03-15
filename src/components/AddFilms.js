@@ -1,5 +1,5 @@
 import React from "react";
-import './AddFilms.css';
+import './Main.css';
 
 const AddFilms = () => {
     return (

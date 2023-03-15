@@ -1,5 +1,5 @@
 import React from 'react';
-import './Stars.css';
+import './Main.css';
 import Star from '../resources/starGray'
 
 

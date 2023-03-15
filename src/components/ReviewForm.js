@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Stars from './Stars'
-import './ReviewForm.css';
+import './Main.css';
+
 
 
 
@@ -52,14 +53,15 @@ const ReviewForm = ({ pushNewReviews }) => {
                 <Stars setStars={setRate} starsCount={rate} />
 
             </div>
+            <div className='textReviewDiv'>
             <input
                 id='textReview'
                 className='text_Review'
                 placeholder='Отзыв о фильме'
                 value={review}
                 onChange={(e)=>(inputHandler(e,setReview))}
-
             ></input>
+            </div>
             <button className='add__btn' onClick={onClick}> Оставить отзыв </button>
         </div>
 
