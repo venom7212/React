@@ -8,6 +8,4 @@ const AddFilms = () => {
         </div>
     )
 }
-
-
 export default AddFilms;
